@@ -8,30 +8,35 @@ require 'chatterbot/dsl'
 # generated on 2014-10-31 10:22:59 -0700
 #
 
-consumer_key '0SagFXkOOh6iZdHKaghMwh43F'
-consumer_secret 'SPkjj0PJVB8FJLcTMi3kvfGveH2hb7NA7WH3fa32h9nGTXzzx2'
+consumer_key 'hFlQiVukQIzBERGStcUJAZibv'
+consumer_secret 'Z3PlTygaDYJsmmwjo9qkUNBaFwEDBQ1y3JEDiC5JoyaVcIzcvc'
 
-secret 'YbbmVU8Whaq3SegRdww62iTAb43ZBo1NZkH4s8VGvHFN1'
-token '2840837429-tDmPxhX7Q1FwoDEqld9Q54L9tGQ4i1az6SSnfqL'
+secret 'k1ev9f2DfpMKPtIrxXu4M5t3TCar3PpX4V4LauEqs3s1Y'
+token '2840837429-xPr87MOmHp0E6MIGnhDXDRUcerfmhm3bU7fgQg0'
 
 # remove this to send out tweets
-debug_mode
+#debug_mode
 
 # remove this to update the db
-no_update
+#no_update
 # remove this to get less output when running
 verbose
 
-# here's a list of users to ignore
-blacklist "abc", "def"
+whitelist "crystaloptera", "kil432", "catusel", "khjrtbrg", "kamilahjae",
+  "Schleary", "lkdamer", "r_l_mark", "rkeblitis", "katiespiders", "pi_inthecloud",
+  "Rblossoming", "praggmath", "kris10mccabe", "kmmpatke", "adaacademy",
+  "callapatel", "rsmomo", "kbonnie", "kate_fulton", "lilyfromseattle", "bri616",
+  "allie_sterling", "truekwak", "mix"
 
-# here's a list of things to exclude from searches
-exclude "hi", "spammer", "junk"
+CLASSARRAY = ["@crystaloptera", "@kil432", "@catusel", "@khjrtbrg",
+  "@kamilahjae", "@Schleary", "@lkdamer", "@r_l_mark", "@rkeblitis",
+  "@katiespiders", "@pi_inthecloud", "@Rblossoming", "@praggmath",
+  "@kris10mccabe", "@kmmpatke", "@callapatel", "@rsmomo",
+  "@adaacademy", "@kbonnie", "@kate_fulton", "@lilyfromseattle",
+  "@bri616", "@allie_sterling", "@truekwak", "@mix"]
 
-search "keyword" do |tweet|
- reply "Hey #USER# nice to meet you!", tweet
-end
-
-replies do |tweet|
-  reply "Yes #USER#, you are very kind to say that!", tweet
+CLASSARRAY.each do |x|
+  replies do |tweet|
+    reply "#{x}, #KSTEST# has a question", tweet
+  end
 end
